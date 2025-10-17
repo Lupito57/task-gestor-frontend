@@ -1,0 +1,35 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.half-width {
+  flex: 1;
+  min-width: 150px;
+}
+
+mat-form-field {
+  background-color: #f9f9f9;
+  border-radius: 6px;
+}
+
+mat-dialog-content {
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+mat-dialog-actions {
+  margin-top: 1rem;
+}

@@ -1,0 +1,43 @@
+.shell{
+  width: min(1100px, 92vw);
+  margin: 28px auto;
+  background: #fff;
+  border-radius: 26px;
+  padding: 28px;
+  box-shadow: 0 18px 50px rgba(0,0,0,.08);
+}
+.header{
+  display:flex; align-items:center; justify-content:space-between; margin-bottom:18px;
+}
+h1{ font-size:22px; font-weight:700; margin:0; }
+.add-task-btn {
+  position: fixed;        /* Siempre flotante */
+  bottom: 20px;           /* Distancia desde abajo */
+  right: 20px;            /* Distancia desde la derecha */
+
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #4A90E2, #007bff);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 9999px;  /* Súper redondeado */
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  z-index: 1000;          /* Que no quede oculto */
+}
+
+.add-task-btn:hover {
+  background: linear-gradient(135deg, #357ABD, #0056b3);
+  transform: translateY(-3px);
+}
+
+.filters-row{
+  display:grid; gap:14px; grid-template-columns: 1fr auto auto; align-items:center;
+  margin: 18px 0 6px;
+}
+.search{ width:100%; }
+.filter-group{ display:flex; align-items:center; gap:10px; }
+.filter-group .label{ font-size:12px; color:#6b7280; }
+.error{ margin-top:16px; background:#fee2e2; color:#991b1b; }

@@ -1,0 +1,86 @@
+<div class="toolbar">
+  <div class="filters-shell">
+    <!-- FILA 1: BUSCADOR -->
+    <mat-form-field appearance="outline" class="search" floatLabel="auto">
+      <mat-label>Buscar tareas por título...</mat-label>
+      <mat-icon matPrefix>search</mat-icon>
+      <input matInput [formControl]="search" />
+      <button
+        mat-icon-button
+        matSuffix
+        *ngIf="search.value"
+        (click)="search.setValue('')"
+        aria-label="Limpiar búsqueda">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <!-- FILA 2: FILTROS (centrados, con wrap) -->
+    <div class="filters">
+      <div class="group">
+        <span class="label">Status</span>
+        <mat-button-toggle-group
+          class="pill-group"
+          (change)="onStatusFilter($event.value)"
+          value="all"
+          name="status">
+          <mat-button-toggle value="all">All</mat-button-toggle>
+          <mat-button-toggle value="pending">Pending</mat-button-toggle>
+          <mat-button-toggle value="in_progress">In progress </mat-button-toggle>
+          <mat-button-toggle value="completed">Completed</mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+      <div class="group">
+        <span class="label">Priority</span>
+        <mat-button-toggle-group
+          class="pill-group"
+          (change)="onPriorityFilter($event.value)"
+          value="all"
+          name="priority">
+          <mat-button-toggle value="all">All</mat-button-toggle>
+          <mat-button-toggle value="high">Low</mat-button-toggle>
+          <mat-button-toggle value="medium">Medium</mat-button-toggle>
+          <mat-button-toggle value="low">High</mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- LISTA DE TAREAS -->
+<div class="list">
+  <mat-card class="task" *ngFor="let t of tasks">
+    <div class="left">
+      <div
+        class="dot"
+        [ngClass]="{
+          red: t.priority === 'high',
+          yellow: t.priority === 'medium',
+          gray: t.priority === 'low'
+        }"></div>
+      <div>
+        <div class="title">{{ t.title }}</div>
+        <div class="desc">{{ t.description }}</div>
+      </div>
+    </div>
+    <div class="right">
+      <span
+        class="chip"
+        [ngClass]="{
+          'chip-pending': t.status === 'pending',
+          'chip-progress': t.status === 'in_progress',
+          'chip-done': t.status === 'completed'
+        }">
+        {{ t.status === 'in_progress' ? 'In-Progress' :
+           t.status === 'pending' ? 'Pending' : 'Completed' }}
+      </span>
+      <button mat-icon-button (click)="ts.toggleStatus(t.id)" matTooltip="Cambiar estado">
+        <mat-icon>sync</mat-icon>
+      </button>
+      <button mat-icon-button (click)="edit.emit(t)" matTooltip="Editar">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="ts.remove(t.id)" matTooltip="Eliminar">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </mat-card>
+</div>
