@@ -1,0 +1,37 @@
+<form *ngIf="isVisible" [formGroup]="form" (ngSubmit)="submit()">
+  <h2>Nueva Tarea</h2>
+
+  <label for="title">Tarea:</label>
+  <input id="title" type="text" formControlName="title" />
+  <div class="error" *ngIf="form.controls.title.invalid && form.controls.title.touched">
+    El título es obligatorio (mínimo 3 caracteres)
+  </div>
+
+  <label for="description">Descripción:</label>
+  <input id="description" type="text" formControlName="description" />
+  <div class="error" *ngIf="form.controls.description.invalid && form.controls.description.touched">
+    La descripción es obligatoria
+  </div>
+
+  <label for="status">Estado:</label>
+  <select id="status" formControlName="status">
+    <option [ngValue]="TaskStatus.PENDING">Pendiente</option>
+    <option [ngValue]="TaskStatus.IN_PROGRESS">En progreso</option>
+    <option [ngValue]="TaskStatus.COMPLETED">Completada</option>
+  </select>
+
+  <label for="priority">Prioridad:</label>
+  <select id="priority" formControlName="priority">
+    <option [ngValue]="TaskPriority.LOW">Baja</option>
+    <option [ngValue]="TaskPriority.MEDIUM">Media</option>
+    <option [ngValue]="TaskPriority.HIGH">Alta</option>
+  </select>
+
+  <div class="buttons">
+    <button type="submit" [disabled]="form.invalid">Agregar</button>
+    <button type="button" (click)="cancel()">Cancelar</button>
+  </div>
+</form>
+
+<!-- Botón para abrir el formulario -->
+<button *ngIf="!isVisible" (click)="toggleDisplay()">+ Nueva Tarea</button>
