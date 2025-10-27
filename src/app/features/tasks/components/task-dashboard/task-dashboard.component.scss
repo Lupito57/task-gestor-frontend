@@ -1,0 +1,43 @@
+.dashboard-shell {
+  display: grid;
+  gap: 20px;
+}
+/* Tarjetas de métricas (gráficas) */
+.stats-wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 180px);
+  gap: 24px;
+  padding: 50px;           /* <- corregido (antes 50Spx) */
+  background: #fff;
+  margin: 20px;            /* <- corregido (antes 20PX) */
+  border-radius: 20px;     /* <- corregido (antes 50PX) */
+  justify-content: space-evenly;
+}
+.stat-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 14px 10px;
+  box-shadow: 0 12px 32px rgba(0,0,0,.06);
+  display: grid;
+  place-items: center;
+}
+.ring {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+/* Colores del trazo del spinner */
+.ring ::ng-deep svg circle { stroke: #2563EB !important; } /* azul */
+.ring.orange ::ng-deep svg circle { stroke: #F59E0B !important; } /* naranja */
+.ring.green  ::ng-deep svg circle { stroke: #10B981 !important; } /* verde */
+.ring-label {
+  position: absolute;
+  display: grid;
+  place-items: center;
+}
+.ring-label .num { font: 700 24px/1 Inter, system-ui; }
+.ring-label .txt { margin-top: 2px; font-size: 12px; color: #6B7280; }
+/* Contenedor para separar la lista */
+.list-wrap {
+  margin-top: 4px;
+}

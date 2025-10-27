@@ -1,0 +1,54 @@
+<div class="dashboard-shell">
+  <!-- SECCIÓN: GRÁFICAS -->
+  <section class="stats-wrap">
+    <div class="stat-card">
+      <div class="ring">
+        <mat-progress-spinner
+          mode="determinate"
+          [value]="(ts.countPending() / (ts.tasks().length || 1)) * 100"
+          [diameter]="90"
+          [strokeWidth]="7">
+        </mat-progress-spinner>
+        <div class="ring-label">
+          <div class="num">{{ ts.countPending() }}</div>
+          <div class="txt">Pending</div>
+        </div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="ring orange">
+        <mat-progress-spinner
+          mode="determinate"
+          [value]="(ts.countInProgress() / (ts.tasks().length || 1)) * 100"
+          [diameter]="90"
+          [strokeWidth]="7">
+        </mat-progress-spinner>
+        <div class="ring-label">
+          <div class="num">{{ ts.countInProgress() }}</div>
+          <div class="txt">In-Progress</div>
+        </div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="ring green">
+        <mat-progress-spinner
+          mode="determinate"
+          [value]="(ts.countCompleted() / (ts.tasks().length || 1)) * 100"
+          [diameter]="90"
+          [strokeWidth]="7">
+        </mat-progress-spinner>
+        <div class="ring-label">
+          <div class="num">{{ ts.countCompleted() }}</div>
+          <div class="txt">Completed</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- SECCIÓN: FILTROS + LISTA (dentro del dashboard) -->
+  <section class="list-wrap">
+    <app-task-list
+      [tasks]="ts.filteredTasks()"
+      (edit)="edit.emit($event)">
+    </app-task-list>
+  </section>
+</div>

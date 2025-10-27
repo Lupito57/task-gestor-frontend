@@ -3,9 +3,19 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+<<<<<<< HEAD
     "FRONTEND": {
       "projectType": "application",
       "schematics": {},
+=======
+    "tasks-ui": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+>>>>>>> 23cd44078d53afd8391259a323a488d4121c168c
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -14,7 +24,15 @@
           "builder": "@angular/build:application",
           "options": {
             "browser": "src/main.ts",
+<<<<<<< HEAD
             "tsConfig": "tsconfig.app.json",
+=======
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+>>>>>>> 23cd44078d53afd8391259a323a488d4121c168c
             "assets": [
               {
                 "glob": "**/*",
@@ -22,7 +40,11 @@
               }
             ],
             "styles": [
+<<<<<<< HEAD
               "src/styles.css"
+=======
+              "src/styles.scss"
+>>>>>>> 23cd44078d53afd8391259a323a488d4121c168c
             ]
           },
           "configurations": {
@@ -53,10 +75,17 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
+<<<<<<< HEAD
               "buildTarget": "FRONTEND:build:production"
             },
             "development": {
               "buildTarget": "FRONTEND:build:development"
+=======
+              "buildTarget": "tasks-ui:build:production"
+            },
+            "development": {
+              "buildTarget": "tasks-ui:build:development"
+>>>>>>> 23cd44078d53afd8391259a323a488d4121c168c
             }
           },
           "defaultConfiguration": "development"
@@ -67,7 +96,16 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
+<<<<<<< HEAD
             "tsConfig": "tsconfig.spec.json",
+=======
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+>>>>>>> 23cd44078d53afd8391259a323a488d4121c168c
             "assets": [
               {
                 "glob": "**/*",
@@ -75,7 +113,11 @@
               }
             ],
             "styles": [
+<<<<<<< HEAD
               "src/styles.css"
+=======
+              "src/styles.scss"
+>>>>>>> 23cd44078d53afd8391259a323a488d4121c168c
             ]
           }
         }

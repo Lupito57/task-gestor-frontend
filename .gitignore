@@ -36,6 +36,10 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
+<<<<<<< HEAD
+=======
+__screenshots__/
+>>>>>>> 23cd44078d53afd8391259a323a488d4121c168c
 
 # System files
 .DS_Store

@@ -1,0 +1,13 @@
+<div class="shell">
+  <h1>Dashboard</h1>
+  <!-- Ahora el dashboard contiene: gráficas -> filtros -> lista -->
+  <app-task-dashboard (edit)="openEdit($event)"></app-task-dashboard>
+  <div class="actions">
+    <span class="spacer"></span>
+    <button mat-raised-button color="primary" class="add-task-btn" (click)="openCreate()">
+      Add New Task
+    </button>
+  </div>
+  <mat-progress-bar *ngIf="ts.loading()" mode="indeterminate"></mat-progress-bar>
+  <mat-card *ngIf="ts.error()" class="error">{{ ts.error() }}</mat-card>
+</div>

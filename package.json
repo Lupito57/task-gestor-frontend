@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "frontend",
+=======
+  "name": "tasks-ui",
+>>>>>>> 23cd44078d53afd8391259a323a488d4121c168c
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -22,6 +26,7 @@
   },
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
     "@angular/common": "^20.2.0",
     "@angular/compiler": "^20.2.0",
     "@angular/core": "^20.2.0",
@@ -37,6 +42,24 @@
     "@angular/build": "^20.2.1",
     "@angular/cli": "^20.2.1",
     "@angular/compiler-cli": "^20.2.0",
+=======
+    "@angular/cdk": "^20.2.5",
+    "@angular/common": "^20.3.0",
+    "@angular/compiler": "^20.3.0",
+    "@angular/core": "^20.3.0",
+    "@angular/forms": "^20.3.0",
+    "@angular/material": "^20.2.5",
+    "@angular/platform-browser": "^20.3.0",
+    "@angular/router": "^20.3.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^20.3.3",
+    "@angular/cli": "^20.3.3",
+    "@angular/compiler-cli": "^20.3.0",
+>>>>>>> 23cd44078d53afd8391259a323a488d4121c168c
     "@types/jasmine": "~5.1.0",
     "jasmine-core": "~5.9.0",
     "karma": "~6.4.0",
@@ -46,4 +69,8 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.9.2"
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 23cd44078d53afd8391259a323a488d4121c168c
